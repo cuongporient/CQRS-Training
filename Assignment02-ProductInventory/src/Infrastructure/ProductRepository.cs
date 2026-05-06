@@ -5,7 +5,7 @@ namespace Assignment02_ProductInventory.Infrastructure;
 
 public class ProductRepository : IProductRepository
 {
-    private readonly List<Product> _products = new();
+    private static readonly List<Product> _products = new();
 
     public void Add(Product product)
     {

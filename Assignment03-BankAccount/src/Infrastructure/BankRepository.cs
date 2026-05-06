@@ -5,8 +5,8 @@ namespace Assignment03_BankAccount.Infrastructure;
 
 public class BankRepository : IBankRepository
 {
-    private readonly List<BankAccount> _accounts = new();
-    private readonly List<TransactionLog> _transactionLogs = new();
+    private static readonly List<BankAccount> _accounts = new();
+    private static readonly List<TransactionLog> _transactionLogs = new();
 
     public void AddAccount(BankAccount account)
     {

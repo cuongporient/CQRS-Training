@@ -5,7 +5,7 @@ namespace Assignment01_OrderManagement.Infrastructure;
 
 public class OrderRepository : IOrderRepository
 {
-    private readonly List<Order> _orders = new();
+    private static readonly List<Order> _orders = new();
 
     public void Add(Order order)
     {

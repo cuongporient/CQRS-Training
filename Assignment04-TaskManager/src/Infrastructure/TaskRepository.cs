@@ -5,7 +5,7 @@ namespace Assignment04_TaskManager.Infrastructure;
 
 public class TaskRepository : ITaskRepository
 {
-    private readonly List<WorkTask> _tasks = new();
+    private static readonly List<WorkTask> _tasks = new();
 
     public void Add(WorkTask task)
     {
