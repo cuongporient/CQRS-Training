@@ -1,15 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Application\Assignment03-BankAccount.Application.csproj" />
     <ProjectReference Include="..\Infrastructure\Assignment03-BankAccount.Infrastructure.csproj" />
   </ItemGroup>
+
 </Project>
