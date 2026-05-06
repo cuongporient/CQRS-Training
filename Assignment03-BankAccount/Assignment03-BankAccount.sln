@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment03-BankAccount.Domain", "src\Domain\Assignment03-BankAccount.Domain.csproj", "{99999999-9999-9999-9999-999999999999}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment03-BankAccount.Application", "src\Application\Assignment03-BankAccount.Application.csproj", "{aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment03-BankAccount.Infrastructure", "src\Infrastructure\Assignment03-BankAccount.Infrastructure.csproj", "{bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment03-BankAccount.Presentation", "src\Presentation\Assignment03-BankAccount.Presentation.csproj", "{cccccccc-cccc-cccc-cccc-cccccccccccc}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99999999-9999-9999-9999-999999999999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99999999-9999-9999-9999-999999999999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99999999-9999-9999-9999-999999999999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99999999-9999-9999-9999-999999999999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa}.Release|Any CPU.Build.0 = Release|Any CPU
+		{bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb}.Release|Any CPU.Build.0 = Release|Any CPU
+		{cccccccc-cccc-cccc-cccc-cccccccccccc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cccccccc-cccc-cccc-cccc-cccccccccccc}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{cccccccc-cccc-cccc-cccc-cccccccccccc}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{cccccccc-cccc-cccc-cccc-cccccccccccc}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

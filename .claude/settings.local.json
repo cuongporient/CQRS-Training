@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\cuong.pham\\\\dev\\\\Training\\\\CQRS-Training\" -Recurse)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Remove-Item -Recurse -Force \"C:\\\\Users\\\\cuong.pham\\\\dev\\\\Training\\\\CQRS-Training\\\\Assignment01-OrderManagement\\\\src\\\\ConsoleApp\")",
+      "Bash(Remove-Item -Recurse -Force \"C:\\\\Users\\\\cuong.pham\\\\dev\\\\Training\\\\CQRS-Training\\\\Assignment02-ProductInventory\\\\src\\\\ConsoleApp\")",
+      "Bash(Remove-Item -Recurse -Force \"C:\\\\Users\\\\cuong.pham\\\\dev\\\\Training\\\\CQRS-Training\\\\Assignment03-BankAccount\\\\src\\\\ConsoleApp\")",
+      "Bash(Remove-Item -Recurse -Force \"C:\\\\Users\\\\cuong.pham\\\\dev\\\\Training\\\\CQRS-Training\\\\Assignment04-TaskManager\\\\src\\\\ConsoleApp\")",
+      "PowerShell(@\\(\"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\", \"C:\\\\Program Files \\(x86\\)\\\\dotnet\\\\dotnet.exe\", \"$env:USERPROFILE\\\\.dotnet\\\\dotnet.exe\", \"$env:LOCALAPPDATA\\\\Microsoft\\\\dotnet\\\\dotnet.exe\"\\) | ForEach-Object { if \\(Test-Path $_\\) { Write-Host \"Found: $_\" } })",
+      "PowerShell($env:PATH)",
+      "PowerShell(Test-Path \"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\"; Test-Path \"$env:LOCALAPPDATA\\\\Programs\\\\dotnet\\\\dotnet.exe\"; Test-Path \"$env:USERPROFILE\\\\.dotnet\\\\tools\\\\dotnet.exe\")"
+    ]
+  }
+}
