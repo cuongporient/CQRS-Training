@@ -16,7 +16,7 @@ Command Query Responsibility Segregation (CQRS) is a pattern that separates the 
 ## Setup
 
 **Prerequisites:**
-- .NET 8 SDK or later
+- .NET 8 SDK or later.
 
 **Quick Start:**
 ```bash
