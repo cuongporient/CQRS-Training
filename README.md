@@ -9,6 +9,26 @@
 | 03 | Bank Account | Deposit, withdraw, transaction history |
 | 04 | Task Manager | Create tasks, status transitions, filtering |
 
+## Submission Workflow
+
+1. **Fork** this repository to your own GitHub account
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/<your-username>/CQRS-Training.git
+   cd CQRS-Training
+   ```
+3. Create a branch for your work:
+   ```bash
+   git checkout -b assignment01/<your-name>
+   ```
+4. Implement the assignment, commit, and push:
+   ```bash
+   git add .
+   git commit -m "Assignment 01: implement handlers"
+   git push origin assignment01/<your-name>
+   ```
+5. Open a **Pull Request** from your fork back to the original repository for review.
+
 ## Quick Start
 
 ```bash
