@@ -1,6 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Assignment04_TaskManager.Presentation.Models;
+using Assignment04_TaskManager.Application.Commands;
+using Assignment04_TaskManager.Application.Queries;
+using Assignment04_TaskManager.Domain;
 
 namespace Assignment04_TaskManager.Presentation.Controllers;
 
@@ -21,10 +24,15 @@ public class TasksController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateTask([FromBody] CreateTaskRequest request)
     {
-        // TODO: Parse request.Priority to the Priority enum
-        // TODO: Create a CreateTaskCommand from the request, send it via _mediator
-        // Return CreatedAtAction with the new task ID
-        throw new NotImplementedException();
+        if (!Enum.TryParse<Priority>(request.Priority, true, out var priority))
+        {
+            return BadRequest("Invalid priority value.");
+        }
+
+        var command = new CreateTaskCommand(request.Title, request.AssignedTo, priority, request.Deadline);
+        var id = await _mediator.Send(command);
+
+        return CreatedAtAction(null, new { id }, id);
     }
 
     // PATCH /tasks/{id}/status
@@ -33,11 +41,14 @@ public class TasksController : ControllerBase
     [HttpPatch("{id:guid}/status")]
     public async Task<IActionResult> ChangeStatus(Guid id, [FromBody] ChangeStatusRequest request)
     {
-        // TODO: Parse request.NewStatus to the WorkStatus enum
-        // TODO: Create a ChangeStatusCommand, send it via _mediator
-        // Catch InvalidOperationException (bad transition) and return UnprocessableEntity with message
-        // Return Ok(new { status = newStatus }) on success
-        throw new NotImplementedException();
+        if (!Enum.TryParse<WorkStatus>(request.NewStatus, true, out var newStatus))
+        {
+            return BadRequest("Invalid status value.");
+        }
+
+        var command = new ChangeStatusCommand(id, newStatus);
+        var updatedStatus = await _mediator.Send(command);
+        return Ok(new { status = updatedStatus.ToString() });
     }
 
     // GET /tasks?assignee=alice
@@ -45,9 +56,9 @@ public class TasksController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetByAssignee([FromQuery] string assignee)
     {
-        // TODO: Create a GetTasksByAssigneeQuery with the assignee, send it via _mediator
-        // Return Ok(tasks)
-        throw new NotImplementedException();
+        var query = new GetTasksByAssigneeQuery(assignee);
+        var tasks = await _mediator.Send(query);
+        return Ok(tasks);
     }
 
     // GET /tasks/overdue
@@ -55,8 +66,8 @@ public class TasksController : ControllerBase
     [HttpGet("overdue")]
     public async Task<IActionResult> GetOverdue()
     {
-        // TODO: Create a GetOverdueTasksQuery, send it via _mediator
-        // Return Ok(tasks)
-        throw new NotImplementedException();
+        var query = new GetOverdueTasksQuery();
+        var tasks = await _mediator.Send(query);
+        return Ok(tasks);
     }
 }

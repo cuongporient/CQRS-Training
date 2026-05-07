@@ -1,14 +1,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31919.166
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11612.150 stable
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Domain", "src\Domain\Assignment04-TaskManager.Domain.csproj", "{dddddddd-dddd-dddd-dddd-dddddddddddd}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Domain", "src\Domain\Assignment04-TaskManager.Domain.csproj", "{DDDDDDDD-DDDD-DDDD-DDDD-DDDDDDDDDDDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Application", "src\Application\Assignment04-TaskManager.Application.csproj", "{eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Application", "src\Application\Assignment04-TaskManager.Application.csproj", "{EEEEEEEE-EEEE-EEEE-EEEE-EEEEEEEEEEEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Infrastructure", "src\Infrastructure\Assignment04-TaskManager.Infrastructure.csproj", "{ffffffff-ffff-ffff-ffff-ffffffffffff}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Infrastructure", "src\Infrastructure\Assignment04-TaskManager.Infrastructure.csproj", "{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment04-TaskManager.Presentation", "src\Presentation\Assignment04-TaskManager.Presentation.csproj", "{10101010-1010-1010-1010-101010101010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment04-TaskManager.Tests", "Assignment04-TaskManager.Tests\Assignment04-TaskManager.Tests.csproj", "{6458E96C-856E-DA0A-4E18-B8DDEBC02FC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,21 +18,28 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{dddddddd-dddd-dddd-dddd-dddddddddddd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{dddddddd-dddd-dddd-dddd-dddddddddddd}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{dddddddd-dddd-dddd-dddd-dddddddddddd}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{dddddddd-dddd-dddd-dddd-dddddddddddd}.Release|Any CPU.Build.0 = Release|Any CPU
-		{eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ffffffff-ffff-ffff-ffff-ffffffffffff}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ffffffff-ffff-ffff-ffff-ffffffffffff}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ffffffff-ffff-ffff-ffff-ffffffffffff}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ffffffff-ffff-ffff-ffff-ffffffffffff}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDDDDDDD-DDDD-DDDD-DDDD-DDDDDDDDDDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDDDDDDD-DDDD-DDDD-DDDD-DDDDDDDDDDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDDDDDDD-DDDD-DDDD-DDDD-DDDDDDDDDDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDDDDDDD-DDDD-DDDD-DDDD-DDDDDDDDDDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEEEEEE-EEEE-EEEE-EEEE-EEEEEEEEEEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEEEEEE-EEEE-EEEE-EEEE-EEEEEEEEEEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEEEEEE-EEEE-EEEE-EEEE-EEEEEEEEEEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEEEEEE-EEEE-EEEE-EEEE-EEEEEEEEEEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10101010-1010-1010-1010-101010101010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10101010-1010-1010-1010-101010101010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10101010-1010-1010-1010-101010101010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10101010-1010-1010-1010-101010101010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6458E96C-856E-DA0A-4E18-B8DDEBC02FC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6458E96C-856E-DA0A-4E18-B8DDEBC02FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6458E96C-856E-DA0A-4E18-B8DDEBC02FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6458E96C-856E-DA0A-4E18-B8DDEBC02FC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
