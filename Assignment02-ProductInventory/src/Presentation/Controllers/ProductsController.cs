@@ -1,6 +1,9 @@
-using MediatR;
+using Mediator.Net;
 using Microsoft.AspNetCore.Mvc;
 using Assignment02_ProductInventory.Presentation.Models;
+using Assignment02_ProductInventory.Application.Commands;
+using Assignment02_ProductInventory.Application.Queries;
+using Assignment02_ProductInventory.Application.DTOs;
 
 namespace Assignment02_ProductInventory.Presentation.Controllers;
 
@@ -21,9 +24,9 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddProduct([FromBody] AddProductRequest request)
     {
-        // TODO: Create an AddProductCommand from the request, send it via _mediator
-        // Return CreatedAtAction with the new product ID
-        throw new NotImplementedException();
+        var command = new AddProductCommand(request.Name, request.Sku, request.Stock, request.Price);
+        var response = await _mediator.RequestAsync<AddProductCommand, Assignment02_ProductInventory.Application.Responses.AddProductResponse>(command);
+        return CreatedAtAction(nameof(AddProduct), new { id = response.Id }, new { id = response.Id });
     }
 
     // POST /products/{id}/restock
@@ -32,9 +35,9 @@ public class ProductsController : ControllerBase
     [HttpPost("{id:guid}/restock")]
     public async Task<IActionResult> Restock(Guid id, [FromBody] RestockRequest request)
     {
-        // TODO: Create a RestockCommand from id + request, send it via _mediator
-        // Return Ok(new { stock = updatedStock })
-        throw new NotImplementedException();
+        var command = new RestockCommand(id, request.Quantity);
+        var response = await _mediator.RequestAsync<RestockCommand, Assignment02_ProductInventory.Application.Responses.RestockResponse>(command);
+        return Ok(new { stock = response.Stock });
     }
 
     // GET /products/low-stock?threshold=10
@@ -42,8 +45,8 @@ public class ProductsController : ControllerBase
     [HttpGet("low-stock")]
     public async Task<IActionResult> GetLowStock([FromQuery] int threshold = 10)
     {
-        // TODO: Create a GetLowStockQuery with the threshold, send it via _mediator
-        // Return Ok(items)
-        throw new NotImplementedException();
+        var query = new GetLowStockQuery(threshold);
+        var response = await _mediator.RequestAsync<GetLowStockQuery, Assignment02_ProductInventory.Application.Responses.GetLowStockResponse>(query);
+        return Ok(response.Items);
     }
 }
