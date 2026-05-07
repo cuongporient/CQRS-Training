@@ -1,10 +1,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using Mediator.Net;
 using FluentValidation;
+using Assignment02_ProductInventory.Application.Middlewares;
 
 namespace Assignment02_ProductInventory.Application;
 
-internal class ServiceProviderDependencyScope : IDependencyScope
+internal sealed class ServiceProviderDependencyScope : IDependencyScope
 {
     private readonly IServiceProvider _provider;
     private readonly IServiceScope? _scope;
@@ -36,7 +37,6 @@ internal class ServiceProviderDependencyScope : IDependencyScope
     
     private object CreateViaActivator(Type type)
     {
-        // Prefer ActivatorUtilities so constructor dependencies are resolved from the provider.
         return Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(_provider, type);
     }
 
@@ -66,7 +66,8 @@ public static class DependencyInjection
             var mediatorBuilder = new MediatorBuilder();
             mediatorBuilder.RegisterHandlers(typeof(DependencyInjection).Assembly);
             var depScope = new ServiceProviderDependencyScope(sp);
-            return mediatorBuilder.Build(depScope);
+            var mediator = mediatorBuilder.Build(depScope);
+            return new ValidatingMediator(mediator, sp);
         });
 
         return services;

@@ -5,25 +5,21 @@ using Assignment02_ProductInventory.Domain;
 using Assignment02_ProductInventory.Application.Interfaces;
 using Assignment02_ProductInventory.Application.Commands;
 using Assignment02_ProductInventory.Application.Responses;
-using FluentValidation;
 
 namespace Assignment02_ProductInventory.Application.Handlers;
 
 public class AddProductCommandHandler : IRequestHandler<AddProductCommand, AddProductResponse>
 {
     private readonly IProductRepository _repository;
-    private readonly IValidator<AddProductCommand> _validator;
 
-    public AddProductCommandHandler(IProductRepository repository, IValidator<AddProductCommand> validator)
+    public AddProductCommandHandler(IProductRepository repository)
     {
         _repository = repository;
-        _validator = validator;
     }
 
     public async Task<AddProductResponse> Handle(IReceiveContext<AddProductCommand> context, CancellationToken cancellationToken)
     {
         var request = context.Message;
-        await _validator.ValidateAndThrowAsync(request, cancellationToken);
 
         var product = new Product
         {
